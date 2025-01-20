@@ -8,7 +8,6 @@ def detect_dice_dots(image_path):
 
     # Apply GaussianBlur to reduce noise
     blurred = cv2.GaussianBlur(gray, (9, 9), 0)
-
     # Detect circles using HoughCircles
     circles = cv2.HoughCircles(blurred, cv2.HOUGH_GRADIENT, dp=1.2, minDist=20, param1=50, param2=30, minRadius=5, maxRadius=30)
 
@@ -31,7 +30,6 @@ def detect_dice_dots(image_path):
 
 # Paths to the test images
 image_paths = ["/mnt/data/DiceTest_1.png", "/mnt/data/DiceTest_2.png","/mnt/data/DiceTest_3.png"]
-
 # Process each image and collect results
 results = {}
 for path in image_paths:
